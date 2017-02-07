@@ -1,11 +1,16 @@
-<h1>Tasks</h1>
-<%= link_to "Add a Task", new_task_path %>
-<% @tasks.each do |task| %>
-  <h2><%=task.name%></h2>
-  <p><%=task.description%></p>
-  <p><%=task.done%></p>
-  <h3><%= link_to task.name, task_path(task) %></h3>
+<div class="container text-center padded">
+  <h1 title>Tasks</h1>
+   <%= link_to "Add a Task", new_task_path %>
+   <div class="row">
+   <% @tasks.each do |task| %>
+    <div class="col-md-4 col-xs-12">
+      <h2><%= link_to task.name, task_path(task) %></h2>
+      <p><%=task.description%></p>
+      <p><%=task.done%></p>
+    </div>
+    <% end %>
+  </div>
+</div>
 
-<% end %>
 
 
